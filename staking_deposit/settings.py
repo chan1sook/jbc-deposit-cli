@@ -16,7 +16,7 @@ PRATER = 'prater'
 SEPOLIA = 'sepolia'
 ZHEJIANG = 'zhejiang'
 HOLESKY = 'holesky'
-JBC = 'jib'
+JBC = 'jbc'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
@@ -55,7 +55,7 @@ ALL_CHAINS: Dict[str, BaseChainSetting] = {
 }
 
 
-def get_chain_setting(chain_name: str = MAINNET) -> BaseChainSetting:
+def get_chain_setting(chain_name: str = JBC) -> BaseChainSetting:
     return ALL_CHAINS[chain_name]
 
 
