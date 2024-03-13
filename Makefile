@@ -1,7 +1,7 @@
 VENV_NAME?=venv
 VENV_ACTIVATE=. $(VENV_NAME)/bin/activate
 PYTHON=${VENV_NAME}/bin/python3.8
-DOCKER_IMAGE="ethereum/staking-deposit-cli:latest"
+DOCKER_IMAGE="jbc-keygen"
 
 help:
 	@echo "clean - remove build and Python file artifacts"
@@ -57,4 +57,4 @@ build_docker:
 	@docker build --pull -t $(DOCKER_IMAGE) .
 
 run_docker:
-	@docker run -it --rm $(DOCKER_IMAGE) $(filter-out $@,$(MAKECMDGOALS))
+	@docker run -v ./validator_keys:/app/validator_keys -it --rm $(DOCKER_IMAGE) $(filter-out $@,$(MAKECMDGOALS))

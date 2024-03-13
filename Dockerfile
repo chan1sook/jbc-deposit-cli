@@ -2,6 +2,8 @@ FROM python:alpine3.14
 
 WORKDIR /app
 
+VOLUME validator_keys
+
 COPY requirements.txt setup.py ./
 
 COPY staking_deposit ./staking_deposit
